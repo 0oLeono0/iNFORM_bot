@@ -9,7 +9,7 @@ class States(BaseStateGroup):
     ANYTHINGELSE_STAGE = 1
     STOP_STATE = 2
 
-@bot.on.message(text="Начать")
+@bot.on.message(text=["Начать", "начать", "Старт", "старт", "start", "Start"])
 async def start(message: Message):
     await message.answer("Привет! Это бот iNFORM. Я помогу" + 
                         " тебе не запутаться в отделах проекта" + 
@@ -44,14 +44,14 @@ async def sobes(message: Message):
     await message.answer("Люди, которые отвечают за беседы факультетов и беседы по интересам. Они знают все об университете и котиках. В обязанности собеседников входит общение с первокурсниками в беседах, модерирование чатов и готовность ответить на любой вопрос, касающийся обучения и не только.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/NqEiNJxeNLCX2uiU6")
     await anythingElse(message.peer_id)
 
-# @bot.on.message(state=States.CHOOSE_STATE, text="Дизайн")
+@bot.on.message(state=States.CHOOSE_STATE, text="Дизайн")
 async def dezign(message: Message):
-    await message.answer("Разрабатывают фирменный стиль и айдентику, а также мерч для мероприятий и организаторов проекта. Во время работы у дизайнеров есть возможность не только отточить свои навыки, создавая шаблонные посты, но и проявить креативность, генерируя развлекательный контент.\n\nПодать заявку в отдел можно тут:\nhttps://docs.google.com/forms/d/1E9CphfXuy40e3cRcdPH2ElaYBzNiM11hBX3nXxfu6jc/edit")
+    await message.answer("Разрабатывают фирменный стиль и айдентику, а также мерч для мероприятий и организаторов проекта. Во время работы у дизайнеров есть возможность не только отточить свои навыки, создавая шаблонные посты, но и проявить креативность, генерируя развлекательный контент.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/fwQqXd8oeVYGSa3NA")
     await anythingElse(message.peer_id)
 
-# @bot.on.message(state=States.CHOOSE_STATE, text="Пиар")
+@bot.on.message(state=States.CHOOSE_STATE, text="Пиар")
 async def omir(message: Message):
-    await message.answer("Отдел ведет интернет-ресурсы и занимается продвижением проекта в социальных сетях. Одной из главных задач является повышение узнаваемости проекта не только в стенах университета, но и за его пределами. Где ты мог(ла) познакомиться с ними? В группах iNFORM, Абитуриенты СПбГУТ, НеНочная во ВКонтакте, а также на платформе Яндекс.Дзен.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/Vutfi6uSPJD2jGMQA")
+    await message.answer("Отдел ведет интернет-ресурсы и занимается продвижением проекта в социальных сетях. Одной из главных задач является повышение узнаваемости проекта не только в стенах университета, но и за его пределами. Где ты мог(ла) познакомиться с ними? В группах iNFORM, Абитуриенты СПбГУТ, НеНочная во ВКонтакте, а также на платформе Яндекс.Дзен.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/ERHjQHGRZQwpXpaS8")
     await anythingElse(message.peer_id)
 
 @bot.on.message(state=States.CHOOSE_STATE, text="Консультация")
@@ -64,9 +64,9 @@ async def surf(message: Message):
     await message.answer("Первые из студентов, с кем ты общаешься, когда поступаешь в наш университет. Серферы занимаются мониторингом приказов о поступлении и поиском новоиспеченных первокурсников в социальных сетях. Порой это бывает непросто, ведь никогда не знаешь, кто скрывается за аватаркой с котиком. После нахождения нужного человека серфер направляет его в беседу факультета.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/U6QdyeQ1bqAZrrBS7")
     await anythingElse(message.peer_id)
     
-# @bot.on.message(state=States.CHOOSE_STATE, text="Медиа")
+@bot.on.message(state=States.CHOOSE_STATE, text="Медиа")
 async def media(message: Message):
-    await message.answer("Снимают фото и видео, придумывают идеи и пишут раскадровки, обрабатывают и анимируют, все это делает медиа-отдел для социальных сетей проекта и его внешнего представления на других площадках. Увидеть работы можно в группах iNFORM, Абитуриенты и НеНочная.\n\nПодать заявку в отдел можно тут:\nhttps://docs.google.com/forms/d/e/1FAIpQLSe8nerUPgnN3yvFIAIioaUvmPzjTyezU3lxxAQvKYDPjRChFw/viewform?usp=sf_link")
+    await message.answer("Снимают фото и видео, придумывают идеи и пишут раскадровки, обрабатывают и анимируют, все это делает медиа-отдел для социальных сетей проекта и его внешнего представления на других площадках. Увидеть работы можно в группах iNFORM, Абитуриенты и НеНочная.\n\nПодать заявку в отдел можно тут:\nhttps://forms.gle/Cio9rtaoAyTmrVfbA")
     await anythingElse(message.peer_id)
 
 @bot.on.message(state=States.CHOOSE_STATE, text="Ивент")
